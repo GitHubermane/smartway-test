@@ -1,0 +1,18 @@
+.button {
+  margin: auto;
+  height: 40px;
+  width: fit-content;
+  padding: 5px 15px;
+  border-radius: calc(40px / 2);
+  background-color: transparent;
+  color: #555;
+  border: 1px solid #555;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #555;
+    color: #fff;
+  }
+}
