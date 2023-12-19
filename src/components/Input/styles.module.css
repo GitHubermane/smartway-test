@@ -1,0 +1,6 @@
+.input__body {
+  height: 40px;
+  padding: 5px 15px;
+  border-radius: calc(40px / 2);
+  border: 1px solid #333;
+}
