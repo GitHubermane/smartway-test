@@ -1,6 +1,6 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { RepositoryService } from 'services';
-import { Repository } from 'types';
+import type { Repository } from 'types';
 
 class RepositoryStore {
   repositories: Repository[] = [];
@@ -22,7 +22,7 @@ class RepositoryStore {
       const { data } = await RepositoryService.getRepositories(
         search,
         count,
-        page
+        page,
       );
 
       const repositories = data.items;
@@ -39,6 +39,15 @@ class RepositoryStore {
         this.isLoading = false;
       });
     }
+  };
+
+  addToFavorite = (id: number) => {
+    const favourite = this.repositories.filter((r) => r.id === id);
+    this.favourites = [...this.favourites, ...favourite];
+  };
+
+  removeFromFavorite = (id: number) => {
+    this.favourites = this.favourites.filter((f) => f.id !== id);
   };
 }
 export default new RepositoryStore();
