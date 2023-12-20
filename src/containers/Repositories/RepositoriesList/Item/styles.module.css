@@ -1,0 +1,24 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #e6e6e6;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+.item__content {
+  display: flex;
+}
+
+.item__text_block {
+  display: flex;
+  flex-direction: column;
+}
+
+.item__avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
