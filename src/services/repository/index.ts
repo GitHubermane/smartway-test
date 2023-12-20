@@ -6,12 +6,12 @@ class RepositoryService {
   static getRepositories = async (
     search: string,
     count?: number,
-    page?: number
+    page?: number,
   ): Promise<AxiosResponse<RepositoryResponse>> => {
     const countQuery = count ? `&per_page=${count}` : '';
     const pageQuery = page ? `&page=${page}` : '';
     return $api.get<RepositoryResponse>(
-      `?q=${search}${countQuery}${pageQuery}`
+      `/repositories?q=${search}${countQuery}${pageQuery}`,
     );
   };
 }
