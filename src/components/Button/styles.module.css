@@ -1,8 +1,8 @@
 .button {
-  height: 40px;
+  height: 25px;
   width: fit-content;
-  padding: 5px 15px;
-  border-radius: calc(40px / 2);
+  padding: 0 20px;
+  border-radius: calc(25px / 2);
   background-color: transparent;
   color: #555;
   border: 1px solid #555;
