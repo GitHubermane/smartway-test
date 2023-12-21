@@ -16,6 +16,12 @@
   flex-direction: column;
 }
 
+.item__btn_block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .item__avatar {
   height: 100px;
   width: 100px;

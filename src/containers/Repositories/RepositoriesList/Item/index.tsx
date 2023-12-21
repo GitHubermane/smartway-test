@@ -1,8 +1,9 @@
 import { type FC } from 'react';
-import { Button } from 'components';
+import { Button, ToggleFavouriteBtn } from 'components';
 import styles from './styles.module.css';
 
 type PropsType = {
+  id: number;
   href: string;
   stars: number;
   forks: number;
@@ -10,7 +11,7 @@ type PropsType = {
 };
 
 export const Item: FC<PropsType> = ({
-  avatar, forks, href, stars, 
+  avatar, forks, href, stars, id, 
 }) => (
   <div className={styles.item}>
     <img
@@ -18,9 +19,21 @@ export const Item: FC<PropsType> = ({
       src={avatar}
       alt="avatar"
     />
+
     <span className={styles.item__text}>{`Forks: ${forks}`}</span>
     <span className={styles.item__text}>{`Stars: ${stars}`}</span>
-    <a href={href}>{href}</a>
-    <Button onClick={() => {}}>Подробнее</Button>
+
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {href}
+    </a>
+
+    <div className={styles.item__btn_block}>
+      <Button onClick={() => {}}>Подробнее</Button>
+      <ToggleFavouriteBtn id={id} />
+    </div>
   </div>
 );
