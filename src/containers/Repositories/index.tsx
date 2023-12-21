@@ -1,38 +1,32 @@
 import { observer } from 'mobx-react-lite';
 import { RepositoryStore } from 'store';
-import { useEffect } from 'react';
+
 import { RepositoriesList } from './RepositoriesList';
+import styles from './styles.module.css';
+import { RepositoryForm } from './RepositoryForm';
 
 export const Repositories = observer(() => {
-  const {
-    repositories, favourites, fetchRepositories, isLoading, 
-  } =
-    RepositoryStore;
-
-  const fetch = async () => {
-    fetchRepositories('k', 3, 1);
-  };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    fetch();
-  }, []);
+  const { repositories, favourites, isLoading } = RepositoryStore;
 
   return (
     <div>
-      <div>
-        <h2>Список репозиториев</h2>
-        {isLoading ? (
-          <span>Loading...</span>
-        ) : (
-          <RepositoriesList repositories={repositories} />
+      <RepositoryForm />
+      <div className={styles.repositories}>
+        <div>
+          <h2>Список репозиториев</h2>
+          {isLoading ? (
+            <span>Loading...</span>
+          ) : (
+            <RepositoriesList repositories={repositories} />
+          )}
+        </div>
+        {favourites.length !== 0 && (
+          <div className={styles.repositories__favourites}>
+            <h2>Список избранных репозиториев</h2>
+            <RepositoriesList repositories={favourites} />
+          </div>
         )}
       </div>
-      {favourites.length !== 0 && (
-        <div>
-          <h2>Список избранных репозиториев</h2>
-          <RepositoriesList repositories={favourites} />
-        </div>
-      )}
     </div>
   );
 });

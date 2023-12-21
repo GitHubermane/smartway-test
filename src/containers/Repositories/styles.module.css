@@ -1,0 +1,7 @@
+.repositories {
+  display: flex;
+}
+
+.repositories__favourites {
+  margin-left: 20px;
+}
