@@ -1,0 +1,14 @@
+.repostitories_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.error {
+  font-weight: 700;
+  padding: 10px 20px;
+  background-color: #450707;
+  border: 3px solid #eb0000;
+  color: #eb0000;
+  border-radius: 5px;
+}
