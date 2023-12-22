@@ -1,18 +1,29 @@
 import { Button, CopyButton, Input } from 'components';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { RepositoryStore } from 'store';
-import { throttle } from 'utils/throttle';
 import styles from './styles.module.css';
 
 export const RepositoryForm = () => {
   const [text, setText] = useState('');
+  const throttleInProgress = useRef<boolean>();
 
   const { fetchRepositories } = RepositoryStore;
 
   const onFetchDataClick = async () => {
-    fetchRepositories(text, 3, 1);
+    await fetchRepositories(text, 5, 0);
   };
-  const throttledFetch = throttle(onFetchDataClick, 5000);
+
+  const throttledClick = (delay: number) => {
+    if (throttleInProgress.current) return;
+
+    throttleInProgress.current = true;
+
+    onFetchDataClick();
+
+    setTimeout(() => {
+      throttleInProgress.current = false;
+    }, delay);
+  };
 
   return (
     <div className={styles.repository_form}>
@@ -21,7 +32,7 @@ export const RepositoryForm = () => {
         onChange={setText}
         placeholder="Enter repository name"
       />
-      <Button onClick={throttledFetch}>Find</Button>
+      <Button onClick={() => throttledClick(3000)}>Find</Button>
       <CopyButton text={text} />
     </div>
   );
