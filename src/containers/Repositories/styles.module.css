@@ -1,5 +1,17 @@
 .repositories {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  height: calc(100% - 40px);
+}
+
+.repositories h2 {
+  margin-bottom: 15px;
+}
+
+.repositories > div,
+.repositories__favourites {
+  height: 100%;
 }
 
 .repositories__favourites {

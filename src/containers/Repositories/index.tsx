@@ -9,7 +9,7 @@ export const Repositories = observer(() => {
   const { repositories, favourites, isLoading } = RepositoryStore;
 
   return (
-    <div>
+    <>
       <RepositoryForm />
       <div className={styles.repositories}>
         <div>
@@ -27,6 +27,6 @@ export const Repositories = observer(() => {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 });

@@ -7,6 +7,10 @@
   border-radius: 10px;
 }
 
+.item a {
+  overflow-wrap: break-word;
+}
+
 .item__content {
   display: flex;
 }

@@ -13,24 +13,28 @@ export const RepositoriesList: FC<PropsType> = ({ repositories }) => {
 
   return (
     <div className={styles.repostitories_list}>
-      {error ? (
-        <div className={styles.error}>{error.message}</div>
-      ) : (
-        repositories.map(
-          ({
-            forks_count, stargazers_count, id, owner, html_url, 
-          }) => (
-            <Item
-              key={id}
-              id={id}
-              forks={forks_count}
-              stars={stargazers_count}
-              avatar={owner.avatar_url}
-              href={html_url}
-            />
-          ),
-        )
-      )}
+      <div className={styles.repostitories_list__container}>
+        <div>
+          {error ? (
+            <div className={styles.error}>{error.message}</div>
+          ) : (
+            repositories.map(
+              ({
+                forks_count, stargazers_count, id, owner, html_url, 
+              }) => (
+                <Item
+                  key={id}
+                  id={id}
+                  forks={forks_count}
+                  stars={stargazers_count}
+                  avatar={owner.avatar_url}
+                  href={html_url}
+                />
+              ),
+            )
+          )}
+        </div>
+      </div>
     </div>
   );
 };
