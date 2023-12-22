@@ -2,7 +2,7 @@
 
 Test project for smartway.
 
-Project deployed on https://githubermane.github.io/smartway-test/repositories
+Project deployed on https://githubermane.github.io/smartway-test
 
 ## Technologies Used
 
