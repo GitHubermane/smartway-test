@@ -1,6 +1,6 @@
 import { starFilledIcon, starIcon } from 'assets';
 import { observer } from 'mobx-react-lite';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { RepositoryStore } from 'store';
 import styles from './style.module.css';
 
@@ -13,9 +13,7 @@ export const ToggleFavouriteBtn: FC<PropsType> = observer(({ id }) => {
 
   const isFavourite = favourites.some((f) => f.id === id);
 
-  const onToggleFavoriteClick = () => {
-    isFavourite ? removeFromFavorite(id) : addToFavorite(id);
-  };
+  const onToggleFavoriteClick = () => (isFavourite ? removeFromFavorite(id) : addToFavorite(id));
 
   return (
     <button

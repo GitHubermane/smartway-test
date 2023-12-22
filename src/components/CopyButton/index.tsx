@@ -1,5 +1,6 @@
 import { Button } from 'components';
-import { FC, useState } from 'react';
+import type { FC } from 'react';
+import { useState } from 'react';
 
 type PropsType = {
   text: string;
