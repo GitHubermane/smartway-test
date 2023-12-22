@@ -1,3 +1,3 @@
-import { Repositories } from 'containers';
+import { Repository } from 'containers';
 
-export const RepositoryPage = () => <Repositories />;
+export const RepositoryPage = () => <Repository />;
