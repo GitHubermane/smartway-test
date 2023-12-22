@@ -1,5 +1,7 @@
 import { type FC } from 'react';
 import { Button, ToggleFavouriteBtn } from 'components';
+import { useNavigate } from 'react-router-dom';
+import { REPOSITORIES_ROUTE } from 'routes';
 import styles from './styles.module.css';
 
 type PropsType = {
@@ -12,28 +14,33 @@ type PropsType = {
 
 export const Item: FC<PropsType> = ({
   avatar, forks, href, stars, id, 
-}) => (
-  <div className={styles.item}>
-    <img
-      className={styles.item__avatar}
-      src={avatar}
-      alt="avatar"
-    />
+}) => {
+  const navigate = useNavigate();
+  const onNavigateClick = () => navigate(`${REPOSITORIES_ROUTE}/${id}`);
 
-    <span className={styles.item__text}>{`Forks: ${forks}`}</span>
-    <span className={styles.item__text}>{`Stars: ${stars}`}</span>
+  return (
+    <div className={styles.item}>
+      <img
+        className={styles.item__avatar}
+        src={avatar}
+        alt="avatar"
+      />
 
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {href}
-    </a>
+      <span className={styles.item__text}>{`Forks: ${forks}`}</span>
+      <span className={styles.item__text}>{`Stars: ${stars}`}</span>
 
-    <div className={styles.item__btn_block}>
-      <Button onClick={() => {}}>Подробнее</Button>
-      <ToggleFavouriteBtn id={id} />
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {href}
+      </a>
+
+      <div className={styles.item__btn_block}>
+        <Button onClick={onNavigateClick}>Подробнее</Button>
+        <ToggleFavouriteBtn id={id} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
