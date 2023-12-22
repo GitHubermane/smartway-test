@@ -1,30 +1,59 @@
-# React + TypeScript + Vite
+# Smartway test project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Test project for smartway.
 
-Currently, two official plugins are available:
+Project deployed on https://githubermane.github.io/smartway-test/repositories
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- Vite
+- React
+- TypeScript
+- MobX
+- React Router DOM
+- Axios
+- CSS Modules
+- ESLint
+- Prettier
+- Husky
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting started
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1. Install dependencies:
+```bash
+pnpm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Run the development server:
+```bash
+pnpm run dev
+```
+3. Open browser and visit http://localhost:5173
+
+## Scripts
+
+### Development
+
+```bash
+pnpm run dev
+```
+Run the project in development mode.
+
+### Build
+
+```bash
+pnpm run build
+```
+Build the project for production.
+
+### Lint
+```bash
+pnpm run lint
+```
+Run ESLint to check and fix code style issues.
+
+### Preview
+```bash
+pnpm run preview
+```
+Preview the production build locally.
