@@ -1,0 +1,21 @@
+.repository {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+
+.back_btn {
+  width: fit-content;
+  border: none;
+  background-color: transparent;
+  display: inline-flex;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.repository_img {
+  height: 100px;
+  width: 100px;
+  border-radius: 15px;
+}
