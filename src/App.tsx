@@ -1,18 +1,24 @@
 import { Layout } from 'components';
-import { Route, Routes } from 'react-router-dom';
-import { routes } from 'routes';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { REPOSITORIES_ROUTE, routes } from 'routes';
 
 const App = () => (
   <Layout>
     <Routes>
-      {routes.map(({ path, Component }) => (
+      <Route
+        path="/"
+        element={<Navigate to={REPOSITORIES_ROUTE} />}
+      />
+    </Routes>
+
+    {routes.map(({ path, Component, id }) => (
+      <Routes key={id}>
         <Route
-          key={path}
           path={path}
           element={<Component />}
         />
-      ))}
-    </Routes>
+      </Routes>
+    ))}
   </Layout>
 );
 

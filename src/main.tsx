@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { URLpath } from 'config.ts';
 import App from './App.tsx';
 
 import './assets/styles/index.css';
@@ -9,9 +10,9 @@ import './assets/styles/index.css';
 import 'normalize.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
-    <React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter basename={URLpath}>
       <App />
-    </React.StrictMode>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </React.StrictMode>,
 );

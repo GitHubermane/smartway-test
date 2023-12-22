@@ -15,5 +15,6 @@ export default defineConfig(({ mode }) => {
       'process.env': processEnv,
     },
     plugins: [react(), tsconfigPaths()],
+    base: '/smartway-test',
   };
 });
