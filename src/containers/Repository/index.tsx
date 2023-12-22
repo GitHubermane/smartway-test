@@ -18,7 +18,7 @@ export const Repository = () => {
   const onBackClick = () => navigate(REPOSITORIES_ROUTE);
 
   return (
-    <div>
+    <div className={styles.repository__container}>
       <div className={styles.repository}>
         <button
           className={styles.back_btn}
@@ -52,6 +52,7 @@ export const Repository = () => {
         />
         <span>{`Login: ${repository?.owner.login}`}</span>
         <span>
+          {'User link: '}
           <a href={repository?.owner.html_url}>{repository?.owner.html_url}</a>
         </span>
       </div>

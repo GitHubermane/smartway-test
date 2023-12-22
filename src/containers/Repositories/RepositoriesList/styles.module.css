@@ -9,11 +9,11 @@
 }
 
 .repostitories_list::-webkit-scrollbar-track {
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .repostitories_list::-webkit-scrollbar-thumb {
-  background-color: #aaa;
+  background-color: #51e5ff;
   border-radius: 3px;
 }
 

@@ -2,12 +2,20 @@
 
 #root {
   font-family: "Montserrat", sans-serif;
+  background-color: #0a002a;
+  color: #51e5ff;
 }
+
+a {
+  color: rgb(72, 229, 66);
+}
+
 html,
 body,
 #root {
   height: 100%;
 }
+
 * {
   box-sizing: border-box;
 }

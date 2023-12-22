@@ -5,9 +5,16 @@
   margin-bottom: 30px;
 }
 
+.repository__container {
+  background-color: #030d8c;
+  padding: 15px;
+  border-radius: 15px;
+}
+
 .back_btn {
   width: fit-content;
   border: none;
+  color: #51e5ff;
   background-color: transparent;
   display: inline-flex;
   text-decoration: underline;
@@ -17,5 +24,6 @@
 .repository_img {
   height: 100px;
   width: 100px;
+  margin-bottom: 10px;
   border-radius: 15px;
 }
